@@ -1,0 +1,56 @@
+SELECT * 
+FROM suppliers
+WHERE country LIKE 'U%';
+
+SELECT order_id, customer_id, freight, ship_country
+FROM orders 
+WHERE ship_country LIKE 'N%'
+ORDER BY freight DESC
+LIMIT 10;
+
+SELECT last_name, first_name, home_phone, region
+FROM employees
+WHERE region IS NULL;
+
+SELECT COUNT(*)
+FROM customers 
+WHERE region IS NOT NULL;
+
+SELECT COUNT(customer_id), country
+FROM customers
+GROUP BY country
+ORDER BY COUNT(customer_id) DESC;
+
+SELECT SUM(freight), ship_country
+FROM orders
+WHERE ship_region IS NOT NULL
+GROUP BY ship_country
+HAVING SUM(freight) > 2750
+ORDER BY SUM(freight) DESC;
+
+SELECT country
+FROM customers
+UNION
+SELECT country
+FROM suppliers 
+ORDER BY country;
+
+SELECT country
+FROM customers
+INTERSECT
+SELECT country
+FROM suppliers 
+INTERSECT
+SELECT country
+FROM employees;
+
+SELECT country
+FROM customers
+INTERSECT
+SELECT country
+FROM suppliers 
+EXCEPT 
+SELECT country
+FROM employees
+
+
