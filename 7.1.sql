@@ -39,4 +39,5 @@ where discontinued = 0
 with local check option;
 
 insert into active_products 
-values (1123,	'ZHOPA',	8,	1,	'10 boxes x 30 bags',	18.0,	39,	0,	10,	1);
+values (1123,	'ZHOPA',	8,	1,	'10 boxes x 30 bags',	18.0,	39,	0,	10,	1),
+(1125,	'weed',	8,	1,	'10 boxes x 30 bags',	18.0,	39,	0,	10,	1)
